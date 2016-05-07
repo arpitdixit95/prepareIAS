@@ -19,9 +19,9 @@ public class CustomListAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private List<ListModel> listItems;
 
-    public CustomListAdapter(Activity activity, List<ListModel> movieItems) {
+    public CustomListAdapter(Activity activity, List<ListModel> listItems) {
         this.activity = activity;
-        this.listItems = movieItems;
+        this.listItems = listItems;
     }
 
     @Override
@@ -49,17 +49,14 @@ public class CustomListAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.list_row, null);
 
 
-        TextView serial = (TextView) convertView.findViewById(R.id.thumbnail);
+        TextView serial = (TextView) convertView.findViewById(R.id.serial);
         TextView title = (TextView) convertView.findViewById(R.id.title);
-        TextView rating = (TextView) convertView.findViewById(R.id.rating);
-        TextView genre = (TextView) convertView.findViewById(R.id.genre);
-        TextView year = (TextView) convertView.findViewById(R.id.releaseYear);
 
         // getting movie data for the row
         ListModel l = listItems.get(position);
 
-        // thumbnail image
-        serial.setText(l.getSerial());
+        // serial
+        serial.setText(String.valueOf(l.getSerial()));
 
         // title
         title.setText(l.getTitle());

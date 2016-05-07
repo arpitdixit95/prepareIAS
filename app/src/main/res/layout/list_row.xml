@@ -5,53 +5,23 @@
     android:background="@drawable/list_row_selector"
     android:padding="8dp" >
 
-    <!-- Thumbnail Image -->
+    <!-- Serial -->
     <TextView
-        android:id="@+id/thumbnail"
+        android:id="@+id/serial"
+        android:background="@color/genre"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginRight="8dp" />
+        android:layout_marginRight="8dp"
+        android:textSize="50dp"/>
 
     <!-- Movie Title -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/thumbnail"
-        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_alignTop="@+id/serial"
+        android:layout_toRightOf="@+id/serial"
         android:textSize="@dimen/title"
         android:textStyle="bold" />
-
-    <!-- Rating -->
-    <TextView
-        android:id="@+id/rating"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title"
-        android:layout_marginTop="1dip"
-        android:layout_toRightOf="@+id/thumbnail"
-        android:textSize="@dimen/rating" />
-
-    <!-- Genre -->
-    <TextView
-        android:id="@+id/genre"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rating"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@+id/thumbnail"
-        android:textColor="@color/genre"
-        android:textSize="@dimen/genre" />
-
-    <!-- Release Year -->
-    <TextView
-        android:id="@+id/releaseYear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:textColor="@color/year"
-        android:textSize="@dimen/year" />
-
 </RelativeLayout>

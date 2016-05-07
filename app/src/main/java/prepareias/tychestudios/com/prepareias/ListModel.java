@@ -6,6 +6,7 @@ package prepareias.tychestudios.com.prepareias;
 public class ListModel {
 
     private int serial ;
+    private String title ;
 
     public int getSerial() {
         return serial;
@@ -23,5 +24,5 @@ public class ListModel {
         this.title = title;
     }
 
-    private String title ;
+
 }
