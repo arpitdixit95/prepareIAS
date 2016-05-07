@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="prepareias.tychestudios.com.prepareias.CurrentAffairSectiom">
+    tools:context="prepareias.tychestudios.com.prepareias.CurrentAffairSection">
 
     <ListView
         android:id="@+id/list"
