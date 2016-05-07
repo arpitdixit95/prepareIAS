@@ -34,6 +34,11 @@ public class CurrentAffairSection extends Activity {
         adapter = new CustomListAdapter(this, sectionList);
         listView.setAdapter(adapter);
 
+
+        topTen = new ListModel() ;
+        monthWise = new ListModel() ;
+        categoryWise = new ListModel() ;
+
         //First item in list
         topTen.setSerial(1);
         topTen.setTitle("Top Ten Current Affairs");
