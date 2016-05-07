@@ -1,5 +1,6 @@
 package prepareias.tychestudios.com.prepareias;
 
+import android.app.Activity;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +15,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CurrentAffairSection extends ListActivity {
+public class CurrentAffairSection extends Activity {
 
     // Movies json url
     private static final String url = "http://api.androidhive.info/json/movies.json";
