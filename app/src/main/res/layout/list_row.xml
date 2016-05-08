@@ -11,15 +11,19 @@
         android:background="@color/genre"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:gravity="center"
         android:layout_alignParentLeft="true"
         android:layout_marginRight="8dp"
-        android:textSize="50dp"/>
+        android:textSize="50dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
 
     <!-- Movie Title -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
+        android:gravity="center_vertical"
         android:layout_alignTop="@+id/serial"
         android:layout_toRightOf="@+id/serial"
         android:textSize="@dimen/title"

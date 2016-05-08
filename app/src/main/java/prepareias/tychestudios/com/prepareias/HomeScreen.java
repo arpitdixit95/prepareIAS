@@ -1,5 +1,6 @@
 package prepareias.tychestudios.com.prepareias;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +12,7 @@ import android.widget.Toast;
 
 public class HomeScreen extends AppCompatActivity {
 
-    private Button current_affairs ;
+    private Button current_affairs, generalStudies ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +20,27 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
 
         current_affairs = (Button)findViewById(R.id.current_affairs) ;
+        generalStudies = (Button)findViewById(R.id.generalStudies) ;
 
         current_affairs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), CurrentAffairSection.class) ;
-                startActivity(i);
+                /*Intent i = new Intent(getApplicationContext(), CurrentAffairSection.class) ;
+                startActivity(i);*/
+                CurrentAffairSectionFragment fragment = new CurrentAffairSectionFragment();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment_placeholder, fragment);
+                ft.commit();
+            }
+        });
+        generalStudies.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GeneralStudiesSection fragment = new GeneralStudiesSection();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment_placeholder, fragment);
+                ft.commit();
+
             }
         });
 
