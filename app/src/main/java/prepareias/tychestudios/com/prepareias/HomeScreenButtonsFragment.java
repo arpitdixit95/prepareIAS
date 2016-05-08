@@ -1,8 +1,9 @@
 package prepareias.tychestudios.com.prepareias;
 
-
+import android.content.Context;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,7 @@ import android.widget.Button;
  */
 public class HomeScreenButtonsFragment extends Fragment {
 
-   // private Button current_affairs, generalStudies
+    private Button current_affairs, generalStudies;
     public HomeScreenButtonsFragment() {
         // Required empty public constructor
     }
@@ -27,5 +28,46 @@ public class HomeScreenButtonsFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_home_screen_buttons, container, false);
     }
 
+    @Override
+    public void onViewCreated( View view,
+                               Bundle savedInstanceState ) {
+        current_affairs = (Button)getActivity().findViewById(R.id.current_affairs) ;
+        generalStudies = (Button)getActivity().findViewById(R.id.generalStudies) ;
 
-}
+        current_affairs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCallback.onArticleClicked(1);
+            }
+        });
+        generalStudies.setOnClickListener(new  View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCallback.onArticleClicked(2);
+            }
+        });
+
+    }
+
+    OnItemClickedListener mCallback;
+
+    // Container Activity must implement this interface
+    public interface OnItemClickedListener {
+        public void onArticleClicked(int position);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        // This makes sure that the container activity has implemented
+        // the callback interface. If not, it throws an exception
+        try {
+            mCallback = (OnItemClickedListener) context;
+            Log.i("Fragment",",mCallback:"+mCallback);
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " must implement OnItemSelectedListener");
+        }
+    }
+
+    }

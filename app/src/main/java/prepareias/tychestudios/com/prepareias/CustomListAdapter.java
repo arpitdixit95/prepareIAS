@@ -56,7 +56,7 @@ public class CustomListAdapter extends BaseAdapter {
         ListModel l = listItems.get(position);
 
         // serial
-        serial.setText(String.valueOf(l.getSerial()));
+        serial.setText(String.valueOf(position+1));
 
         // title
         title.setText(l.getTitle());

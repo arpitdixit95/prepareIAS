@@ -16,6 +16,14 @@ public class ListModel {
         this.serial = serial;
     }
 
+    @Override
+    public String toString() {
+        return "ListModel{" +
+                "title='" + title + '\'' +
+                ", serial=" + serial +
+                '}';
+    }
+
     public String getTitle() {
         return title;
     }
