@@ -7,7 +7,7 @@
     tools:context="prepareias.tychestudios.com.prepareias.quiz.QuizActivity">
 
     <FrameLayout
-        android:id="@+id/fragment_placeholder"
+        android:id="@+id/test_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

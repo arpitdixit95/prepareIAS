@@ -22,7 +22,13 @@
         android:layout_height="wrap_content"
         android:text="General Studies"
         android:id="@+id/generalStudies"
-        android:layout_below="@+id/current_affairs"
+        android:layout_below="@+id/current_affairs" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test Series"
+        android:id="@+id/testSeries"
+        android:layout_below="@+id/generalStudies"
         />
 
 </RelativeLayout>

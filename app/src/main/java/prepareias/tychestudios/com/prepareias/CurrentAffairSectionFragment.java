@@ -42,13 +42,12 @@ public class CurrentAffairSectionFragment extends Fragment implements SwipeRefre
     private String url = null;
     private String topicName="0";
     private int level = 0;
-    private boolean morePages = false;
     private int pageno=1;
     private ProgressDialog pDialog;
     private List<ListModel> sectionList = new ArrayList<ListModel>();
     private ListView listView;
     private CustomListAdapter adapter;
-    private ListModel topTen, monthWise, categoryWise ;
+    //private ListModel topTen, monthWise, categoryWise ;
 
     public CurrentAffairSectionFragment() {
         // Required empty public constructor
@@ -94,6 +93,9 @@ public class CurrentAffairSectionFragment extends Fragment implements SwipeRefre
     @Override
     public void onViewCreated( View view,
                                Bundle savedInstanceState ) {
+        pDialog = new ProgressDialog(getActivity());
+        pDialog.setMessage("Loading...");
+        pDialog.show();
         if(level == 0){
             sectionList.clear();
             staticList();
@@ -221,6 +223,7 @@ public class CurrentAffairSectionFragment extends Fragment implements SwipeRefre
         ListModel categoryWise = new ListModel() ;
 
         //First item in list
+        hidePDialog();
         topTen.setSerial(1);
         topTen.setTitle("Top Ten Current Affairs");
         sectionList.add(topTen) ;

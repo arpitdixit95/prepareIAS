@@ -15,7 +15,7 @@ import android.widget.Button;
  */
 public class HomeScreenButtonsFragment extends Fragment {
 
-    private Button current_affairs, generalStudies;
+    private Button current_affairs, generalStudies, testSeries;
     public HomeScreenButtonsFragment() {
         // Required empty public constructor
     }
@@ -33,7 +33,7 @@ public class HomeScreenButtonsFragment extends Fragment {
                                Bundle savedInstanceState ) {
         current_affairs = (Button)getActivity().findViewById(R.id.current_affairs) ;
         generalStudies = (Button)getActivity().findViewById(R.id.generalStudies) ;
-
+        testSeries = (Button)getActivity().findViewById(R.id.testSeries) ;
         current_affairs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,6 +47,12 @@ public class HomeScreenButtonsFragment extends Fragment {
             }
         });
 
+        testSeries.setOnClickListener(new  View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCallback.onArticleClicked(3);
+            }
+        });
     }
 
     OnItemClickedListener mCallback;

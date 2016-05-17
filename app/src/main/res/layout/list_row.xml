@@ -8,7 +8,6 @@
     <!-- Serial -->
     <TextView
         android:id="@+id/serial"
-        android:background="@color/genre"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:gravity="center"

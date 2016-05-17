@@ -2,6 +2,7 @@ package prepareias.tychestudios.com.prepareias;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Movie;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,10 +19,12 @@ public class CustomListAdapter extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
     private List<ListModel> listItems;
+    private String[] bgcolors ;
 
     public CustomListAdapter(Activity activity, List<ListModel> listItems) {
         this.activity = activity;
         this.listItems = listItems;
+        this.bgcolors = activity.getApplicationContext().getResources().getStringArray(R.array.bgcolors) ;
     }
 
     @Override
@@ -56,10 +59,13 @@ public class CustomListAdapter extends BaseAdapter {
         ListModel l = listItems.get(position);
 
         // serial
-        serial.setText(String.valueOf(position+1));
+        serial.setText(String.valueOf(position + 1));
 
         // title
         title.setText(l.getTitle());
+
+        String color = bgcolors[position % bgcolors.length] ;
+        serial.setBackgroundColor(Color.parseColor(color));
 
         return convertView;
     }
